@@ -1,67 +1,31 @@
 package netology.hibernate.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Table(name = "persons")
 public class Persons {
     @Id
-    @Column(nullable = false)
+    @Column(name = "name")
     private String name;
-
-    @Column(nullable = false)
-    private String surname;
+    @Column(name = "age")
     private int age;
-    private String phonenumber;
-    private String situofliving;
+    @Column(name = "phone_number")
+    private String phoneNumber;
+    @Column(name = "city_of_living")
+    private String cityOfLiving;
+    @Column(name = "surname")
+    private String surname;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
-    public String getSituofliving() {
-        return situofliving;
-    }
-
-    public void setSituofliving(String situofliving) {
-        this.situofliving = situofliving;
-    }
 }
